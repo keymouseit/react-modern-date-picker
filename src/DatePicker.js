@@ -36,6 +36,8 @@ const DatePicker = ({
   renderFooter,
   customDaysClassName,
   onChangeMonth,
+  onHoverDate,
+  hoverComponent
 }) => {
   const calendarContainerElement = useRef(null);
   const inputElement = useRef(null);
@@ -214,6 +216,8 @@ const DatePicker = ({
               renderFooter={renderFooter || renderFooterDefault}
               customDaysClassName={customDaysClassName}
               onChangeMonth={onChangeMonth}
+              onHoverDate={onHoverDate}
+              hoverComponent={hoverComponent}
             />
           </div>
           <div className="DatePicker__calendarArrow" />

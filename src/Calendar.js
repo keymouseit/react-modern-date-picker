@@ -31,6 +31,8 @@ const Calendar = ({
   renderFooter,
   customDaysClassName,
   onChangeMonth = () => {},
+  onHoverDate = () => {},
+  hoverComponent,
 }) => {
   const calendarElement = useRef(null);
   const [mainState, setMainState] = useState({
@@ -179,6 +181,8 @@ const Calendar = ({
         shouldHighlightWeekends={shouldHighlightWeekends}
         customDaysClassName={customDaysClassName}
         isQuickSelectorOpen={mainState.isYearSelectorOpen || mainState.isMonthSelectorOpen}
+        onHoverDate={onHoverDate}
+        hoverComponent={hoverComponent}
       />
       <div className="Calendar__footer">{renderFooter()}</div>
     </div>

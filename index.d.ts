@@ -39,6 +39,8 @@ export interface CalendarProps<TValue extends Value> {
   renderFooter?: React.FC;
   customDaysClassName?: CustomDayClassNameItem[];
   onChangeMonth?: (month: object, direction: string) => void;
+  onHoverDate?: any;
+  hoverComponent?: any;
 }
 
 export function Calendar(props: Optional<CalendarProps<DayValue>, 'value'>): React.ReactElement;

@@ -32,6 +32,8 @@ const DaysList = ({
   shouldHighlightWeekends,
   isQuickSelectorOpen,
   customDaysClassName,
+  onHoverDate,
+  hoverComponent
 }) => {
   const calendarSectionWrapper = useRef(null);
   const { isRtl, weekDays: weekDaysList } = useLocaleLanguage(locale);
@@ -216,6 +218,7 @@ const DaysList = ({
       <div
         tabIndex={shouldEnableKeyboardNavigation ? '0' : '-1'}
         key={id}
+        onMouseEnter={() => onHoverDate({day, month, year})}
         className={`Calendar__day -${isRtl ? 'rtl' : 'ltr'} ${additionalClass}`}
         onClick={() => {
           handleDayPress({ ...dayItem, isDisabled });
@@ -232,6 +235,7 @@ const DaysList = ({
         data-is-default-selectable={shouldEnableKeyboardNavigation}
       >
         {!isStandard ? '' : getLanguageDigits(day)}
+        {hoverComponent || null}
       </div>
     );
   };
