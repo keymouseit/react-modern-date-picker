@@ -33,7 +33,7 @@ const DaysList = ({
   isQuickSelectorOpen,
   customDaysClassName,
   onHoverDate,
-  hoverComponent
+  hoverComponent,
 }) => {
   const calendarSectionWrapper = useRef(null);
   const { isRtl, weekDays: weekDaysList } = useLocaleLanguage(locale);
